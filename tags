@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/;"	extras:pseudo
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/;"	extras:pseudo
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/;"	extras:pseudo
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/;"	extras:pseudo
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/;"	extras:pseudo
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/;"	extras:pseudo
+!_TAG_PROC_CWD	/home/peru/mbz/	//;"	extras:pseudo
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//;"	extras:pseudo
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/;"	extras:pseudo
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/;"	extras:pseudo
+!_TAG_PROGRAM_VERSION	5.9.0	//;"	extras:pseudo
+arpa/inet.h	main.cpp	/^#include <arpa\/inet.h>/;"	kind:header	line:16	language:C++	roles:system	extras:reference
+asm-generic/socket.h	main.cpp	/^#include <asm-generic\/socket.h>/;"	kind:header	line:13	language:C++	roles:system	extras:reference
+cstdio	main.cpp	/^#include <cstdio>/;"	kind:header	line:14	language:C++	roles:system	extras:reference
+fcntl.h	main.cpp	/^#include <fcntl.h>/;"	kind:header	line:19	language:C++	roles:system	extras:reference
+iostream	main.cpp	/^#include <iostream>/;"	kind:header	line:18	language:C++	roles:system	extras:reference
+listening_ipv4	main.cpp	/^	int const	listening_ipv4 = socket(AF_INET, SOCK_RAW, IPPROTO_TCP);$/;"	kind:local	line:36	language:C++	scope:function:main	typeref:typename:int const	file:	roles:def	extras:fileScope	end:36
+listening_ipv6	main.cpp	/^	int const	listening_ipv6 = socket(AF_INET6, SOCK_RAW, IPPROTO_TCP);$/;"	kind:local	line:35	language:C++	scope:function:main	typeref:typename:int const	file:	roles:def	extras:fileScope	end:35
+main	main.cpp	/^int main(void)$/;"	kind:function	line:33	language:C++	typeref:typename:int	signature:(void)	roles:def	end:39
+main.cpp	main.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:41	epoch:1708967046
+netinet/in.h	main.cpp	/^#include <netinet\/in.h>/;"	kind:header	line:17	language:C++	roles:system	extras:reference
+sys/socket.h	main.cpp	/^#include <sys\/socket.h>/;"	kind:header	line:15	language:C++	roles:system	extras:reference
+unistd.h	main.cpp	/^#include <unistd.h>/;"	kind:header	line:20	language:C++	roles:system	extras:reference
