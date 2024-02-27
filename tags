@@ -9,15 +9,27 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/;"	extras:pseudo
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/;"	extras:pseudo
 !_TAG_PROGRAM_VERSION	5.9.0	//;"	extras:pseudo
-arpa/inet.h	main.cpp	/^#include <arpa\/inet.h>/;"	kind:header	line:16	language:C++	roles:system	extras:reference
-asm-generic/socket.h	main.cpp	/^#include <asm-generic\/socket.h>/;"	kind:header	line:13	language:C++	roles:system	extras:reference
-cstdio	main.cpp	/^#include <cstdio>/;"	kind:header	line:14	language:C++	roles:system	extras:reference
-fcntl.h	main.cpp	/^#include <fcntl.h>/;"	kind:header	line:19	language:C++	roles:system	extras:reference
-iostream	main.cpp	/^#include <iostream>/;"	kind:header	line:18	language:C++	roles:system	extras:reference
-listening_ipv4	main.cpp	/^	int const	listening_ipv4 = socket(AF_INET, SOCK_RAW, IPPROTO_TCP);$/;"	kind:local	line:36	language:C++	scope:function:main	typeref:typename:int const	file:	roles:def	extras:fileScope	end:36
-listening_ipv6	main.cpp	/^	int const	listening_ipv6 = socket(AF_INET6, SOCK_RAW, IPPROTO_TCP);$/;"	kind:local	line:35	language:C++	scope:function:main	typeref:typename:int const	file:	roles:def	extras:fileScope	end:35
-main	main.cpp	/^int main(void)$/;"	kind:function	line:33	language:C++	typeref:typename:int	signature:(void)	roles:def	end:39
-main.cpp	main.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:41	epoch:1708967046
-netinet/in.h	main.cpp	/^#include <netinet\/in.h>/;"	kind:header	line:17	language:C++	roles:system	extras:reference
-sys/socket.h	main.cpp	/^#include <sys\/socket.h>/;"	kind:header	line:15	language:C++	roles:system	extras:reference
-unistd.h	main.cpp	/^#include <unistd.h>/;"	kind:header	line:20	language:C++	roles:system	extras:reference
+MAX_DATAGRAM_SIZE	main.cpp	/^#define MAX_DATAGRAM_SIZE /;"	kind:macro	line:26	language:C++	file:	roles:def	extras:fileScope	end:26	macrodef:1500
+arpa/inet.h	main.cpp	/^#include <arpa\/inet.h>/;"	kind:header	line:13	language:C++	roles:system	extras:reference
+asm-generic/socket.h	main.cpp	/^#include <asm-generic\/socket.h>/;"	kind:header	line:14	language:C++	roles:system	extras:reference
+cerrno	main.cpp	/^#include <cerrno>/;"	kind:header	line:15	language:C++	roles:system	extras:reference
+cstdio	main.cpp	/^#include <cstdio>/;"	kind:header	line:16	language:C++	roles:system	extras:reference
+cstdlib	main.cpp	/^#include <cstdlib>/;"	kind:header	line:17	language:C++	roles:system	extras:reference
+datagram	main.cpp	/^	uint8_t			   datagram[MAX_DATAGRAM_SIZE];$/;"	kind:local	line:71	language:C++	scope:function:main	typeref:typename:uint8_t[]	file:	roles:def	extras:fileScope	end:71
+datagram	main.cpp	/^static void parse_tcp(uint8_t *datagram, ssize_t datagram_size)$/;"	kind:parameter	line:40	language:C++	scope:function:parse_tcp	typeref:typename:uint8_t *	file:	roles:def	extras:fileScope	nth:0
+datagram_size	main.cpp	/^	ssize_t			   datagram_size;$/;"	kind:local	line:72	language:C++	scope:function:main	typeref:typename:ssize_t	file:	roles:def	extras:fileScope	end:72
+datagram_size	main.cpp	/^static void parse_tcp(uint8_t *datagram, ssize_t datagram_size)$/;"	kind:parameter	line:40	language:C++	scope:function:parse_tcp	typeref:typename:ssize_t	file:	roles:def	extras:fileScope	nth:1
+epoll_event	main.cpp	/^	struct epoll_event epoll_event;$/;"	kind:local	line:70	language:C++	scope:function:main	typeref:struct:epoll_event	file:	roles:def	extras:fileScope	end:70
+epoll_instance	main.cpp	/^	int const		   epoll_instance = epoll_create(static_cast<int>(true));$/;"	kind:local	line:69	language:C++	scope:function:main	typeref:typename:int const	file:	roles:def	extras:fileScope	end:69
+fcntl.h	main.cpp	/^#include <fcntl.h>/;"	kind:header	line:18	language:C++	roles:system	extras:reference
+iostream	main.cpp	/^#include <iostream>/;"	kind:header	line:19	language:C++	roles:system	extras:reference
+listening_ipv4	main.cpp	/^	int const		   listening_ipv4 = socket(AF_INET, SOCK_RAW, IPPROTO_TCP);$/;"	kind:local	line:68	language:C++	scope:function:main	typeref:typename:int const	file:	roles:def	extras:fileScope	end:68
+listening_ipv6	main.cpp	/^	int const		   listening_ipv6 = socket(AF_INET6, SOCK_RAW, IPPROTO_TCP);$/;"	kind:local	line:67	language:C++	scope:function:main	typeref:typename:int const	file:	roles:def	extras:fileScope	end:67
+main	main.cpp	/^int main(void)$/;"	kind:function	line:65	language:C++	typeref:typename:int	signature:(void)	roles:def	end:122
+main.cpp	main.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:124	epoch:1709034106
+netinet/in.h	main.cpp	/^#include <netinet\/in.h>/;"	kind:header	line:20	language:C++	roles:system	extras:reference
+parse_tcp	main.cpp	/^static void parse_tcp(uint8_t *datagram, ssize_t datagram_size)$/;"	kind:function	line:40	language:C++	typeref:typename:void	file:	signature:(uint8_t * datagram,ssize_t datagram_size)	roles:def	extras:fileScope	end:63	properties:static
+sys/epoll.h	main.cpp	/^#include <sys\/epoll.h>/;"	kind:header	line:21	language:C++	roles:system	extras:reference
+sys/socket.h	main.cpp	/^#include <sys\/socket.h>/;"	kind:header	line:22	language:C++	roles:system	extras:reference
+sys/types.h	main.cpp	/^#include <sys\/types.h>/;"	kind:header	line:23	language:C++	roles:system	extras:reference
+unistd.h	main.cpp	/^#include <unistd.h>/;"	kind:header	line:24	language:C++	roles:system	extras:reference
