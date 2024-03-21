@@ -4,37 +4,108 @@
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/;"	extras:pseudo
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/;"	extras:pseudo
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/;"	extras:pseudo
-!_TAG_PROC_CWD	/home/peru/mbz/	//;"	extras:pseudo
+!_TAG_PROC_CWD	/home/user/mbz/	//;"	extras:pseudo
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//;"	extras:pseudo
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/;"	extras:pseudo
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/;"	extras:pseudo
 !_TAG_PROGRAM_VERSION	5.9.0	//;"	extras:pseudo
-MTU	main.cpp	/^#define MTU /;"	kind:macro	line:27	language:C++	file:	roles:def	extras:fileScope	end:27	macrodef:1464 
-arpa/inet.h	main.cpp	/^#include <arpa\/inet.h>/;"	kind:header	line:13	language:C++	roles:system	extras:reference
-asm-generic/socket.h	main.cpp	/^#include <asm-generic\/socket.h>/;"	kind:header	line:14	language:C++	roles:system	extras:reference
-cerrno	main.cpp	/^#include <cerrno>/;"	kind:header	line:15	language:C++	roles:system	extras:reference
-cstdint	main.cpp	/^#include <cstdint>/;"	kind:header	line:16	language:C++	roles:system	extras:reference
-cstdio	main.cpp	/^#include <cstdio>/;"	kind:header	line:17	language:C++	roles:system	extras:reference
-cstdlib	main.cpp	/^#include <cstdlib>/;"	kind:header	line:18	language:C++	roles:system	extras:reference
-epoll_event	main.cpp	/^	struct epoll_event epoll_event;$/;"	kind:local	line:88	language:C++	scope:function:main	typeref:struct:epoll_event	file:	roles:def	extras:fileScope	end:88
-epoll_instance	main.cpp	/^	int const		   epoll_instance = epoll_create(static_cast<int>(true));$/;"	kind:local	line:87	language:C++	scope:function:main	typeref:typename:int const	file:	roles:def	extras:fileScope	end:87
-fcntl.h	main.cpp	/^#include <fcntl.h>/;"	kind:header	line:19	language:C++	roles:system	extras:reference
-header_size	main.cpp	/^	ssize_t	header_size;$/;"	kind:local	line:69	language:C++	scope:function:ipv4_header_size	typeref:typename:ssize_t	file:	roles:def	extras:fileScope	end:69
-iostream	main.cpp	/^#include <iostream>/;"	kind:header	line:20	language:C++	roles:system	extras:reference
-ipv4_header_size	main.cpp	/^static ssize_t ipv4_header_size(uint8_t const *const segment, ssize_t segment_size)$/;"	kind:function	line:67	language:C++	typeref:typename:ssize_t	file:	signature:(uint8_t const * const segment,ssize_t segment_size)	roles:def	extras:fileScope	end:81	properties:static
-listening_ipv4	main.cpp	/^	int const		   listening_ipv4 = socket(AF_INET, SOCK_RAW, IPPROTO_TCP);$/;"	kind:local	line:86	language:C++	scope:function:main	typeref:typename:int const	file:	roles:def	extras:fileScope	end:86
-listening_ipv6	main.cpp	/^	int const		   listening_ipv6 = socket(AF_INET6, SOCK_RAW, IPPROTO_TCP);$/;"	kind:local	line:85	language:C++	scope:function:main	typeref:typename:int const	file:	roles:def	extras:fileScope	end:85
-main	main.cpp	/^int main(void)$/;"	kind:function	line:83	language:C++	typeref:typename:int	signature:(void)	roles:def	end:141
-main.cpp	main.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:143	epoch:1709044383
-netinet/in.h	main.cpp	/^#include <netinet\/in.h>/;"	kind:header	line:21	language:C++	roles:system	extras:reference
-parse_tcp	main.cpp	/^static void parse_tcp(uint8_t const *const segment, ssize_t segment_size)$/;"	kind:function	line:42	language:C++	typeref:typename:void	file:	signature:(uint8_t const * const segment,ssize_t segment_size)	roles:def	extras:fileScope	end:65	properties:static
-segment	main.cpp	/^	uint8_t			   segment[MTU]; $/;"	kind:local	line:89	language:C++	scope:function:main	typeref:typename:uint8_t[]	file:	roles:def	extras:fileScope	end:89
-segment	main.cpp	/^static ssize_t ipv4_header_size(uint8_t const *const segment, ssize_t segment_size)$/;"	kind:parameter	line:67	language:C++	scope:function:ipv4_header_size	typeref:typename:uint8_t const * const	file:	roles:def	extras:fileScope	nth:0
-segment	main.cpp	/^static void parse_tcp(uint8_t const *const segment, ssize_t segment_size)$/;"	kind:parameter	line:42	language:C++	scope:function:parse_tcp	typeref:typename:uint8_t const * const	file:	roles:def	extras:fileScope	nth:0
-segment_size	main.cpp	/^	ssize_t			   segment_size;$/;"	kind:local	line:90	language:C++	scope:function:main	typeref:typename:ssize_t	file:	roles:def	extras:fileScope	end:90
-segment_size	main.cpp	/^static ssize_t ipv4_header_size(uint8_t const *const segment, ssize_t segment_size)$/;"	kind:parameter	line:67	language:C++	scope:function:ipv4_header_size	typeref:typename:ssize_t	file:	roles:def	extras:fileScope	nth:1
-segment_size	main.cpp	/^static void parse_tcp(uint8_t const *const segment, ssize_t segment_size)$/;"	kind:parameter	line:42	language:C++	scope:function:parse_tcp	typeref:typename:ssize_t	file:	roles:def	extras:fileScope	nth:1
-sys/epoll.h	main.cpp	/^#include <sys\/epoll.h>/;"	kind:header	line:22	language:C++	roles:system	extras:reference
-sys/socket.h	main.cpp	/^#include <sys\/socket.h>/;"	kind:header	line:23	language:C++	roles:system	extras:reference
-sys/types.h	main.cpp	/^#include <sys\/types.h>/;"	kind:header	line:24	language:C++	roles:system	extras:reference
-unistd.h	main.cpp	/^#include <unistd.h>/;"	kind:header	line:25	language:C++	roles:system	extras:reference
+FD_TABLE_SIZE	start_server.hpp	/^#define FD_TABLE_SIZE /;"	kind:macro	line:32	language:C++	roles:def	end:32	macrodef:500000
+REGISTERED_BUFFER_SIZE	start_server.hpp	/^#define REGISTERED_BUFFER_SIZE /;"	kind:macro	line:33	language:C++	roles:def	end:33	macrodef:1e8
+__anona36d8fae010d	helpers.hpp	/^void                   check_for_errors_worker(char const *str, t_s_worker_id);$/;"	kind:parameter	line:35	language:C++	scope:prototype:check_for_errors_worker	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope,anonymous	nth:1
+bind_addres	main.cpp	/^	struct sockaddr_in6 bind_addres = {$/;"	kind:local	line:44	language:C++	scope:function:lauch_workers_for_port	typeref:struct:sockaddr_in6	file:	roles:def	extras:fileScope	end:45
+callback	start_server.hpp	/^		void (*callback)(void *);$/;"	kind:member	line:48	language:C++	scope:struct:s_identifyer	typeref:typename:void (*)(void *)	access:public	roles:def	end:48
+callback_params	start_server.hpp	/^		void *callback_params;$/;"	kind:member	line:49	language:C++	scope:struct:s_identifyer	typeref:typename:void *	access:public	roles:def	end:49
+cerrno	start_server.cpp	/^#include <cerrno>/;"	kind:header	line:13	language:C++	roles:system	extras:reference
+check_for_errors	check_for_errors.cpp	/^void check_for_errors(char const *str)$/;"	kind:function	line:36	language:C++	typeref:typename:void	signature:(char const * str)	roles:def	end:43
+check_for_errors	helpers.hpp	/^void                   check_for_errors(char const *str);$/;"	kind:prototype	line:34	language:C++	typeref:typename:void	signature:(char const * str)	roles:def	end:34
+check_for_errors.cpp	check_for_errors.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:55	epoch:1711022005
+check_for_errors_worker	check_for_errors.cpp	/^void check_for_errors_worker(char const *str, t_s_worker_id worker_id)$/;"	kind:function	line:45	language:C++	typeref:typename:void	signature:(char const * str,t_s_worker_id worker_id)	roles:def	end:53
+check_for_errors_worker	helpers.hpp	/^void                   check_for_errors_worker(char const *str, t_s_worker_id);$/;"	kind:prototype	line:35	language:C++	typeref:typename:void	signature:(char const * str,t_s_worker_id)	roles:def	end:35
+cstddef	main.cpp	/^#include <cstddef>/;"	kind:header	line:13	language:C++	roles:system	extras:reference
+cstddef	start_server.hpp	/^#include <cstddef>/;"	kind:header	line:15	language:C++	roles:system	extras:reference
+cstdint	main.cpp	/^#include <cstdint>/;"	kind:header	line:14	language:C++	roles:system	extras:reference
+cstdint	start_server.hpp	/^#include <cstdint>/;"	kind:header	line:16	language:C++	roles:system	extras:reference
+cstdlib	start_server.cpp	/^#include <cstdlib>/;"	kind:header	line:14	language:C++	roles:system	extras:reference
+e_optype	start_server.hpp	/^typedef enum class e_optype$/;"	kind:enum	line:35	language:C++	roles:def	end:42	properties:scopedenum
+errno.h	check_for_errors.cpp	/^#include <errno.h>/;"	kind:header	line:13	language:C++	roles:system	extras:reference
+errno.h	main.cpp	/^#include <errno.h>/;"	kind:header	line:15	language:C++	roles:system	extras:reference
+false_val	main.cpp	/^	int           false_val = 0;$/;"	kind:local	line:46	language:C++	scope:function:lauch_workers_for_port	typeref:typename:int	file:	roles:def	extras:fileScope	end:46
+helpers.hpp	check_for_errors.cpp	/^#include "helpers.hpp"/;"	kind:header	line:17	language:C++	roles:local	extras:reference
+helpers.hpp	helpers.hpp	/^#include "helpers.hpp"/;"	kind:header	line:15	language:C++	roles:local	extras:reference
+helpers.hpp	helpers.hpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:37	epoch:1711020420
+helpers.hpp	main.cpp	/^#include "helpers.hpp"/;"	kind:header	line:25	language:C++	roles:local	extras:reference
+helpers.hpp	start_server.cpp	/^#include "helpers.hpp"/;"	kind:header	line:20	language:C++	roles:local	extras:reference
+host_name	start_server.hpp	/^		char           *host_name;$/;"	kind:member	line:60	language:C++	scope:struct:s_server_cofig	typeref:typename:char *	access:public	roles:def	end:60
+i	main.cpp	/^	for (int i = 0; i < worker_number; i++)$/;"	kind:local	line:58	language:C++	scope:function:lauch_workers_for_port	typeref:typename:int	file:	roles:def	extras:fileScope	end:58
+id	start_server.hpp	/^		int        id;$/;"	kind:member	line:47	language:C++	scope:struct:s_identifyer	typeref:typename:int	access:public	roles:def	end:47
+ip	start_server.hpp	/^		struct in6_addr ip;$/;"	kind:member	line:61	language:C++	scope:struct:s_server_cofig	typeref:struct:in6_addr	access:public	roles:def	end:61
+lauch_workers_for_port	main.cpp	/^static void lauch_workers_for_port(uint16_t port, int worker_number, t_s_server_config *servers,/;"	kind:function	line:41	language:C++	typeref:typename:void	file:	signature:(uint16_t port,int worker_number,t_s_server_config * servers,size_t server_number)	roles:def	extras:fileScope	end:70	properties:static
+liburing.h	start_server.cpp	/^#include <liburing.h>/;"	kind:header	line:15	language:C++	roles:system	extras:reference
+limits.h	main.cpp	/^#include <limits.h>/;"	kind:header	line:16	language:C++	roles:system	extras:reference
+limits.h	start_server.cpp	/^#include <limits.h>/;"	kind:header	line:16	language:C++	roles:system	extras:reference
+lisening_fd	main.cpp	/^	int                 lisening_fd = socket(AF_INET6, SOCK_STREAM, IPPROTO_TCP);$/;"	kind:local	line:43	language:C++	scope:function:lauch_workers_for_port	typeref:typename:int	file:	roles:def	extras:fileScope	end:43
+main	main.cpp	/^int main(void)$/;"	kind:function	line:72	language:C++	typeref:typename:int	signature:(void)	roles:def	end:82
+main.cpp	main.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:84	epoch:1711024714
+netinet/in.h	main.cpp	/^#include <netinet\/in.h>/;"	kind:header	line:17	language:C++	roles:system	extras:reference
+netinet/in.h	start_server.hpp	/^#include <netinet\/in.h>/;"	kind:header	line:17	language:C++	roles:system	extras:reference
+operation	start_server.hpp	/^		t_e_optype operation;$/;"	kind:member	line:46	language:C++	scope:struct:s_identifyer	typeref:typename:t_e_optype	access:public	roles:def	end:46
+operation_accept	start_server.hpp	/^	operation_accept,$/;"	kind:enumerator	line:38	language:C++	scope:enum:e_optype	access:public	roles:def
+port	main.cpp	/^static void lauch_workers_for_port(uint16_t port, int worker_number, t_s_server_config *servers,/;"	kind:parameter	line:41	language:C++	scope:function:lauch_workers_for_port	typeref:typename:uint16_t	file:	roles:def	extras:fileScope	nth:0
+port	start_server.hpp	/^		uint16_t port;$/;"	kind:member	line:55	language:C++	scope:struct:s_worker_id	typeref:typename:uint16_t	access:public	roles:def	end:55
+ring	start_server.cpp	/^	struct io_uring ring;$/;"	kind:local	line:38	language:C++	scope:function:start_server	typeref:struct:io_uring	file:	roles:def	extras:fileScope	end:38
+s_identifyer	start_server.hpp	/^typedef struct s_identifyer$/;"	kind:struct	line:44	language:C++	roles:def	end:50
+s_identifyer::callback	start_server.hpp	/^		void (*callback)(void *);$/;"	kind:member	line:48	language:C++	scope:struct:s_identifyer	typeref:typename:void (*)(void *)	access:public	roles:def	extras:qualified
+s_identifyer::callback_params	start_server.hpp	/^		void *callback_params;$/;"	kind:member	line:49	language:C++	scope:struct:s_identifyer	typeref:typename:void *	access:public	roles:def	extras:qualified
+s_identifyer::id	start_server.hpp	/^		int        id;$/;"	kind:member	line:47	language:C++	scope:struct:s_identifyer	typeref:typename:int	access:public	roles:def	extras:qualified
+s_identifyer::operation	start_server.hpp	/^		t_e_optype operation;$/;"	kind:member	line:46	language:C++	scope:struct:s_identifyer	typeref:typename:t_e_optype	access:public	roles:def	extras:qualified
+s_server_cofig	start_server.hpp	/^typedef struct s_server_cofig$/;"	kind:struct	line:58	language:C++	roles:def	end:62
+s_server_cofig::host_name	start_server.hpp	/^		char           *host_name;$/;"	kind:member	line:60	language:C++	scope:struct:s_server_cofig	typeref:typename:char *	access:public	roles:def	extras:qualified
+s_server_cofig::ip	start_server.hpp	/^		struct in6_addr ip;$/;"	kind:member	line:61	language:C++	scope:struct:s_server_cofig	typeref:struct:in6_addr	access:public	roles:def	extras:qualified
+s_worker_id	start_server.hpp	/^typedef struct s_worker_id$/;"	kind:struct	line:52	language:C++	roles:def	end:56
+s_worker_id::port	start_server.hpp	/^		uint16_t port;$/;"	kind:member	line:55	language:C++	scope:struct:s_worker_id	typeref:typename:uint16_t	access:public	roles:def	extras:qualified
+s_worker_id::worker_num	start_server.hpp	/^		int      worker_num;$/;"	kind:member	line:54	language:C++	scope:struct:s_worker_id	typeref:typename:int	access:public	roles:def	extras:qualified
+server_configs	start_server.cpp	/^void start_server(t_s_worker_id worker_id, t_s_server_config *server_configs,$/;"	kind:parameter	line:35	language:C++	scope:function:start_server	typeref:typename:t_s_server_config *	file:	roles:def	extras:fileScope	nth:1
+server_configs	start_server.hpp	/^void                   start_server(t_s_worker_id worker_id, t_s_server_config *server_configs, /;"	kind:parameter	line:64	language:C++	scope:prototype:start_server	typeref:typename:t_s_server_config *	file:	roles:def	extras:fileScope	nth:1
+server_number	main.cpp	/^static void lauch_workers_for_port(uint16_t port, int worker_number, t_s_server_config *servers,/;"	kind:parameter	line:41	language:C++	scope:function:lauch_workers_for_port	typeref:typename:size_t	file:	roles:def	extras:fileScope	nth:3
+server_number	start_server.cpp	/^				  __attribute__((unused)) size_t server_number)$/;"	kind:parameter	line:36	language:C++	scope:function:start_server	typeref:typename:size_t	file:	roles:def	extras:fileScope	nth:2
+server_number	start_server.hpp	/^void                   start_server(t_s_worker_id worker_id, t_s_server_config *server_configs, /;"	kind:parameter	line:64	language:C++	scope:prototype:start_server	typeref:typename:size_t	file:	roles:def	extras:fileScope	nth:2
+servers	main.cpp	/^	t_s_server_config servers[] = {[0] = {.host_name = "*"}};$/;"	kind:local	line:74	language:C++	scope:function:main	typeref:typename:t_s_server_config[]	file:	roles:def	extras:fileScope	end:74
+servers	main.cpp	/^static void lauch_workers_for_port(uint16_t port, int worker_number, t_s_server_config *servers,/;"	kind:parameter	line:41	language:C++	scope:function:lauch_workers_for_port	typeref:typename:t_s_server_config *	file:	roles:def	extras:fileScope	nth:2
+signal.h	main.cpp	/^#include <signal.h>/;"	kind:header	line:18	language:C++	roles:system	extras:reference
+socket_read	start_server.hpp	/^	socket_read,$/;"	kind:enumerator	line:39	language:C++	scope:enum:e_optype	access:public	roles:def
+socket_write	start_server.hpp	/^	socket_write,$/;"	kind:enumerator	line:40	language:C++	scope:enum:e_optype	access:public	roles:def
+start_server	start_server.cpp	/^void start_server(t_s_worker_id worker_id, t_s_server_config *server_configs,$/;"	kind:function	line:35	language:C++	typeref:typename:void	signature:(t_s_worker_id worker_id,t_s_server_config * server_configs,size_t server_number)	roles:def	end:52
+start_server	start_server.hpp	/^void                   start_server(t_s_worker_id worker_id, t_s_server_config *server_configs, /;"	kind:prototype	line:64	language:C++	typeref:typename:void	signature:(t_s_worker_id worker_id,t_s_server_config * server_configs,size_t server_number)	roles:def	end:64
+start_server.cpp	start_server.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:54	epoch:1711022050
+start_server.hpp	check_for_errors.cpp	/^#include "start_server.hpp"/;"	kind:header	line:18	language:C++	roles:local	extras:reference
+start_server.hpp	helpers.hpp	/^#include "start_server.hpp"/;"	kind:header	line:16	language:C++	roles:local	extras:reference
+start_server.hpp	main.cpp	/^#include "start_server.hpp"/;"	kind:header	line:26	language:C++	roles:local	extras:reference
+start_server.hpp	start_server.cpp	/^#include "start_server.hpp"/;"	kind:header	line:21	language:C++	roles:local	extras:reference
+start_server.hpp	start_server.hpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:66	epoch:1711022132
+stdint.h	main.cpp	/^#include <stdint.h>/;"	kind:header	line:19	language:C++	roles:system	extras:reference
+stdio.h	check_for_errors.cpp	/^#include <stdio.h>/;"	kind:header	line:14	language:C++	roles:system	extras:reference
+stdio.h	main.cpp	/^#include <stdio.h>/;"	kind:header	line:20	language:C++	roles:system	extras:reference
+stdio.h	start_server.cpp	/^#include <stdio.h>/;"	kind:header	line:17	language:C++	roles:system	extras:reference
+stdlib.h	check_for_errors.cpp	/^#include <stdlib.h>/;"	kind:header	line:15	language:C++	roles:system	extras:reference
+stdlib.h	main.cpp	/^#include <stdlib.h>/;"	kind:header	line:21	language:C++	roles:system	extras:reference
+stdlib.h	start_server.cpp	/^#include <stdlib.h>/;"	kind:header	line:18	language:C++	roles:system	extras:reference
+str	check_for_errors.cpp	/^void check_for_errors(char const *str)$/;"	kind:parameter	line:36	language:C++	scope:function:check_for_errors	typeref:typename:char const *	file:	roles:def	extras:fileScope	nth:0
+str	check_for_errors.cpp	/^void check_for_errors_worker(char const *str, t_s_worker_id worker_id)$/;"	kind:parameter	line:45	language:C++	scope:function:check_for_errors_worker	typeref:typename:char const *	file:	roles:def	extras:fileScope	nth:0
+str	helpers.hpp	/^void                   check_for_errors(char const *str);$/;"	kind:parameter	line:34	language:C++	scope:prototype:check_for_errors	typeref:typename:char const *	file:	roles:def	extras:fileScope	nth:0
+str	helpers.hpp	/^void                   check_for_errors_worker(char const *str, t_s_worker_id);$/;"	kind:parameter	line:35	language:C++	scope:prototype:check_for_errors_worker	typeref:typename:char const *	file:	roles:def	extras:fileScope	nth:0
+sys/socket.h	main.cpp	/^#include <sys\/socket.h>/;"	kind:header	line:22	language:C++	roles:system	extras:reference
+t_e_optype	start_server.hpp	/^} t_e_optype;$/;"	kind:typedef	line:42	language:C++	typeref:enum:e_optype	roles:def
+t_s_identifyer	start_server.hpp	/^} t_s_identifyer;$/;"	kind:typedef	line:50	language:C++	typeref:struct:s_identifyer	roles:def
+t_s_server_config	start_server.hpp	/^} t_s_server_config;$/;"	kind:typedef	line:62	language:C++	typeref:struct:s_server_cofig	roles:def
+t_s_worker_id	start_server.hpp	/^} t_s_worker_id;$/;"	kind:typedef	line:56	language:C++	typeref:struct:s_worker_id	roles:def
+timeout	start_server.hpp	/^	timeout$/;"	kind:enumerator	line:41	language:C++	scope:enum:e_optype	access:public	roles:def
+tst.cpp	tst.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	epoch:1711017108
+unistd.h	main.cpp	/^#include <unistd.h>/;"	kind:header	line:23	language:C++	roles:system	extras:reference
+usser_issued_operation	start_server.hpp	/^	usser_issued_operation,$/;"	kind:enumerator	line:37	language:C++	scope:enum:e_optype	access:public	roles:def
+vector	start_server.cpp	/^	struct iovec	vector;$/;"	kind:local	line:39	language:C++	scope:function:start_server	typeref:struct:iovec	file:	roles:def	extras:fileScope	end:39
+worker_id	check_for_errors.cpp	/^void check_for_errors_worker(char const *str, t_s_worker_id worker_id)$/;"	kind:parameter	line:45	language:C++	scope:function:check_for_errors_worker	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope	nth:1
+worker_id	main.cpp	/^	t_s_worker_id worker_id = {.port = port};$/;"	kind:local	line:47	language:C++	scope:function:lauch_workers_for_port	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope	end:47
+worker_id	start_server.cpp	/^void start_server(t_s_worker_id worker_id, t_s_server_config *server_configs,$/;"	kind:parameter	line:35	language:C++	scope:function:start_server	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope	nth:0
+worker_id	start_server.hpp	/^void                   start_server(t_s_worker_id worker_id, t_s_server_config *server_configs, /;"	kind:parameter	line:64	language:C++	scope:prototype:start_server	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope	nth:0
+worker_num	start_server.hpp	/^		int      worker_num;$/;"	kind:member	line:54	language:C++	scope:struct:s_worker_id	typeref:typename:int	access:public	roles:def	end:54
+worker_number	main.cpp	/^static void lauch_workers_for_port(uint16_t port, int worker_number, t_s_server_config *servers,/;"	kind:parameter	line:41	language:C++	scope:function:lauch_workers_for_port	typeref:typename:int	file:	roles:def	extras:fileScope	nth:1

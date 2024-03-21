@@ -6,7 +6,7 @@
 #    github:   https://github.com/priezu-m                                     #
 #    Licence:  GPLv3                                                           #
 #    Created:  2023/09/27 18:57:07                                             #
-#    Updated:  2024/02/26 17:37:27                                             #
+#    Updated:  2024/03/21 11:23:34                                             #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,11 @@
 ################################################################################
 
 SHELL :=			bash
-CC :=				clang++
+CC :=				clang
+CXX :=				clang++
 FLAGS :=			-O2 -flto -Wall -Wextra
 DEBUG_FLAGS :=		-O0 -fsanitize=address,undefined,leak -g3
-LDFLAGS :=			
+LDFLAGS :=			-luring
 
 ################################################################################
 
@@ -80,11 +81,11 @@ $(OBJ_PATH)/%.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJ_PATH)/%.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CXX) $(FLAGS) -c $< -o $@
 
 $(DEP_PATH)/%.d: %.cpp | $(NEW_DIRS)
 	@rm -f $(DEP_PATH)/$@; \
-		$(CC) -M $< > $@.tmp; \
+		$(CXX) -M $< > $@.tmp; \
 		sed 's,$(notdir $*).o[ :]*,$(OBJ_PATH)/$(subst $(DEP_PATH_MAKE),,$(basename $@).o) $@ : ,g' \
 	   	< $@.tmp > $@; \
 		rm -f $@.tmp
@@ -97,7 +98,7 @@ $(DEP_PATH)/%.d: %.c | $(NEW_DIRS)
 		rm -f $@.tmp
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $@ $(LDFLAGS)
+	$(CXX) $(FLAGS) $(OBJ) -o $@ $(LDFLAGS)
 
 .PHONY: all clean fclean re push update_manpath tags debug format
 
