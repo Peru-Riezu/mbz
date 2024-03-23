@@ -6,7 +6,7 @@
 #    github:   https://github.com/priezu-m                                     #
 #    Licence:  GPLv3                                                           #
 #    Created:  2023/09/27 18:57:07                                             #
-#    Updated:  2024/03/21 11:23:34                                             #
+#    Updated:  2024/03/23 07:12:23                                             #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,12 @@
 ################################################################################
 
 SHELL :=			bash
-CC :=				clang
-CXX :=				clang++
-FLAGS :=			-O2 -flto -Wall -Wextra
+CC :=				gcc
+CXX :=				g++
+CFLAGS :=			-O2 -flto -Wall -Wextra
+CXXFLAGS :=			-O2 -flto -Wall -Wextra
 DEBUG_FLAGS :=		-O0 -fsanitize=address,undefined,leak -g3
-LDFLAGS :=			-luring
+LDFLAGS :=			-flto
 
 ################################################################################
 
@@ -68,41 +69,44 @@ CURRENT_DIR :=		$(shell pwd)
 MANPATH_APPEND :=	$(CURRENT_DIR)/manpages
 CURRENT_MANPAHT :=	$(shell man --path)
 
+ifneq ($(MAKECMDGOALS),$(NAME))
 -include $(DEP)
+endif
 
 ################################################################################
 
-.DEFAULT_GOAL :=	all
+.DEFAULT_GOAL :=	$(NAME)
 
 $(NEW_DIRS):
 	@mkdir -p $@
 
 $(OBJ_PATH)/%.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_PATH)/%.o: %.cpp
-	$(CXX) $(FLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(DEP_PATH)/%.d: %.cpp | $(NEW_DIRS)
 	@rm -f $(DEP_PATH)/$@; \
-		$(CXX) -M $< > $@.tmp; \
+		$(CXX) $(CXXFLAGS) -M $< > $@.tmp; \
 		sed 's,$(notdir $*).o[ :]*,$(OBJ_PATH)/$(subst $(DEP_PATH_MAKE),,$(basename $@).o) $@ : ,g' \
 	   	< $@.tmp > $@; \
 		rm -f $@.tmp
 
 $(DEP_PATH)/%.d: %.c | $(NEW_DIRS)
 	@rm -f $(DEP_PATH)/$@; \
-		$(CC) -M $< > $@.tmp; \
+		$(CC) $(CFLAGS) -M $< > $@.tmp; \
 		sed 's,$(notdir $*).o[ :]*,$(OBJ_PATH)/$(subst $(DEP_PATH_MAKE),,$(basename $@).o) $@ : ,g' \
 	   	< $@.tmp > $@; \
 		rm -f $@.tmp
 
 $(NAME): $(OBJ)
-	$(CXX) $(FLAGS) $(OBJ) -o $@ $(LDFLAGS)
+	$(CXX) $(OBJ) -o $@ $(LDFLAGS)
 
 .PHONY: all clean fclean re push update_manpath tags debug format
 
-all: $(NAME)
+all:
+	@make --no-print-directory $(NAME)
 
 clean:
 	@rm $(DEP) $(OBJ) debug &> /dev/null || true
@@ -112,7 +116,7 @@ fclean: clean
 	@rm $(NAME) &> /dev/null || true
 
 re: fclean
-	@make --no-print-directory all
+	@make --no-print-directory
 
 pull:
 	@git pull

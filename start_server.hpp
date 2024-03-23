@@ -6,7 +6,7 @@
 /*   github:   https://github.com/priezu-m                                    */
 /*   Licence:  GPLv3                                                          */
 /*   Created:  2024/03/21 10:54:41                                            */
-/*   Updated:  2024/03/22 14:07:21                                            */
+/*   Updated:  2024/03/23 07:14:06                                            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 #pragma GCC diagnostic ignored "-Wpadded"
 ;
 
-#define FD_TABLE_SIZE          5000
-#define REGISTERED_BUFFER_SIZE 100000
+#define FD_TABLE_SIZE          50000
+#define REGISTERED_BUFFER_SIZE 100000000
 
 typedef enum class e_optype
 {
