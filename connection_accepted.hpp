@@ -6,7 +6,7 @@
 /*   github:   https://github.com/priezu-m                                    */
 /*   Licence:  GPLv3                                                          */
 /*   Created:  2024/03/22 13:19:44                                            */
-/*   Updated:  2024/03/22 13:23:01                                            */
+/*   Updated:  2024/03/23 08:47:43                                            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 typedef struct s_connection_accepted_data
 {
 		t_s_server_config_list server_config_list;
-		in6_addr               connection_addres;
+		sockaddr_in6           connection_addres;
 } t_s_connection_accepted_data;
 
 void                   connection_accepted(void *data, int32_t res, t_s_worker_id worker_id);

@@ -6,13 +6,14 @@
 /*   github:   https://github.com/priezu-m                                    */
 /*   Licence:  GPLv3                                                          */
 /*   Created:  2024/03/22 12:45:42                                            */
-/*   Updated:  2024/03/23 08:39:48                                            */
+/*   Updated:  2024/03/23 09:47:41                                            */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "connection_accepted.hpp"
 #include <arpa/inet.h>
 #include <cstdio>
+#include <errno.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
 
@@ -41,31 +42,38 @@ void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)
 	fprintf(stderr, "worker nº%u of port %hu: ", worker_id.worker_num, worker_id.port);
 	if (res == 0)
 	{
-		if ((connection_accepted_data.connection_addres.s6_addr[15] == 0) &&
-			(connection_accepted_data.connection_addres.s6_addr[14] == 0) &&
-			(connection_accepted_data.connection_addres.s6_addr[13] == 0) &&
-			(connection_accepted_data.connection_addres.s6_addr[12] == 0) &&
-			(connection_accepted_data.connection_addres.s6_addr[11] == 0) &&
-			(connection_accepted_data.connection_addres.s6_addr[10] == 0) &&
-			(connection_accepted_data.connection_addres.s6_addr[9] == 0) &&
-			(connection_accepted_data.connection_addres.s6_addr[8] == 0) &&
-			(connection_accepted_data.connection_addres.s6_addr[7] == 0) &&
-			(connection_accepted_data.connection_addres.s6_addr[6] == 0) &&
-			(connection_accepted_data.connection_addres.s6_addr[5] == 0xff) &&
-			(connection_accepted_data.connection_addres.s6_addr[4] == 0xff))
+		if ((connection_accepted_data.connection_addres.sin6_addr.s6_addr[0] == 0) &&
+			(connection_accepted_data.connection_addres.sin6_addr.s6_addr[1] == 0) &&
+			(connection_accepted_data.connection_addres.sin6_addr.s6_addr[2] == 0) &&
+			(connection_accepted_data.connection_addres.sin6_addr.s6_addr[3] == 0) &&
+			(connection_accepted_data.connection_addres.sin6_addr.s6_addr[4] == 0) &&
+			(connection_accepted_data.connection_addres.sin6_addr.s6_addr[5] == 0) &&
+			(connection_accepted_data.connection_addres.sin6_addr.s6_addr[6] == 0) &&
+			(connection_accepted_data.connection_addres.sin6_addr.s6_addr[7] == 0) &&
+			(connection_accepted_data.connection_addres.sin6_addr.s6_addr[8] == 0) &&
+			(connection_accepted_data.connection_addres.sin6_addr.s6_addr[9] == 0) &&
+			(connection_accepted_data.connection_addres.sin6_addr.s6_addr[10] == 0xff) &&
+			(connection_accepted_data.connection_addres.sin6_addr.s6_addr[11] == 0xff))
 		{
-			ipv4.s_addr = htonl(static_cast<unsigned>(connection_accepted_data.connection_addres.s6_addr[3] << 3U) |
-								static_cast<unsigned>(connection_accepted_data.connection_addres.s6_addr[2] << 2U) |
-								static_cast<unsigned>(connection_accepted_data.connection_addres.s6_addr[1] << 1U) |
-								connection_accepted_data.connection_addres.s6_addr[1]);
+			ipv4.s_addr =
+				static_cast<unsigned>(connection_accepted_data.connection_addres.sin6_addr.s6_addr[15] << 8U * 3U) |
+				static_cast<unsigned>(connection_accepted_data.connection_addres.sin6_addr.s6_addr[14] << 8U * 2U) |
+				static_cast<unsigned>(connection_accepted_data.connection_addres.sin6_addr.s6_addr[13] << 8U * 1U) |
+				connection_accepted_data.connection_addres.sin6_addr.s6_addr[12];
 
 			inet_ntop(AF_INET, &ipv4, str, sizeof(str));
 		}
 		else
 		{
-			inet_ntop(AF_INET6, &connection_accepted_data.connection_addres, str, sizeof(str));
+			inet_ntop(AF_INET6, &connection_accepted_data.connection_addres.sin6_addr, str, sizeof(str));
 		}
 		fprintf(stderr, "connection accepted from ip: %s\n", str);
+	}
+	else
+	{
+		errno = -res;
+		fprintf(stderr, "accept failed: ");
+		perror(nullptr);
 	}
 }
 

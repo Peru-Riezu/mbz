@@ -6,7 +6,7 @@
 #    github:   https://github.com/priezu-m                                     #
 #    Licence:  GPLv3                                                           #
 #    Created:  2023/09/27 18:57:07                                             #
-#    Updated:  2024/03/23 07:15:26                                             #
+#    Updated:  2024/03/23 08:58:10                                             #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,9 @@ CC :=				gcc
 CXX :=				g++
 CFLAGS :=			-O2 -flto -Wall -Wextra
 CXXFLAGS :=			-O2 -flto -Wall -Wextra
-DEBUG_FLAGS :=		-O0 -fsanitize=address,undefined,leak -g3
-LDFLAGS :=			-flto -luring
+CDEBUG_FLAGS :=		-O0 -fsanitize=address,undefined,leak -g3
+CXXDEBUG_FLAGS :=	-O0 -fsanitize=address,undefined,leak -g3
+LDFLAGS :=			-luring
 
 ################################################################################
 
@@ -101,7 +102,7 @@ $(DEP_PATH)/%.d: %.c | $(NEW_DIRS)
 		rm -f $@.tmp
 
 $(NAME): $(OBJ)
-	$(CXX) $(OBJ) -o $@ $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $@ $(LDFLAGS)
 
 .PHONY: all clean fclean re push update_manpath tags debug format
 
@@ -135,7 +136,7 @@ tags:
 	@ctags --extras-all=* --fields-all=* --c-kinds=* --c++-kinds=* $(CSRC) $(CHDR) $(CPPSRC) $(CPPHDR)
 
 debug:
-	@make --no-print-directory re FLAGS="$(DEBUG_FLAGS)"
+	@make --no-print-directory re CFLAGS="$(CDEBUG_FLAGS)" CXXFLAGS="$(CXXDEBUG_FLAGS)"
 	@make --no-print-directory clean
 	@mv $(NAME) debug
 

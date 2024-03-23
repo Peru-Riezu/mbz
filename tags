@@ -15,7 +15,7 @@ __anon17a26b1f010a	start_server.hpp	/^		{$/;"	kind:union	line:56	language:C++	sc
 __anona36d8fae010d	helpers.hpp	/^void                   check_for_errors_worker(char const *str, t_s_worker_id);$/;"	kind:parameter	line:35	language:C++	scope:prototype:check_for_errors_worker	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope,anonymous	nth:1
 addr	main.cpp	/^	struct in6_addr addr;$/;"	kind:local	line:54	language:C++	scope:function:get_in6_addr	typeref:struct:in6_addr	file:	roles:def	extras:fileScope	end:54
 addr	main.cpp	/^	struct in_addr addr;$/;"	kind:local	line:44	language:C++	scope:function:get_in_addr	typeref:struct:in_addr	file:	roles:def	extras:fileScope	end:44
-addr_size	start_server.cpp	/^	socklen_t                           addr_size;$/;"	kind:local	line:44	language:C++	scope:function:issue_accept_if_needed	typeref:typename:socklen_t	file:	roles:def	extras:fileScope	end:44
+addr_size	start_server.cpp	/^	static socklen_t                    addr_size = sizeof(sockaddr_in6);$/;"	kind:local	line:44	language:C++	scope:function:issue_accept_if_needed	typeref:typename:socklen_t	file:	roles:def	extras:fileScope	end:44	properties:static
 arpa/inet.h	connection_accepted.cpp	/^#include <arpa\/inet.h>/;"	kind:header	line:14	language:C++	roles:system	extras:reference
 arpa/inet.h	main.cpp	/^#include <arpa\/inet.h>/;"	kind:header	line:13	language:C++	roles:system	extras:reference
 available	get_free_connection_socket_index.cpp	/^static unsigned int available;$/;"	kind:variable	line:33	language:C++	typeref:typename:unsigned int	file:	roles:def	extras:fileScope	end:33	properties:static
@@ -30,15 +30,15 @@ check_for_errors	helpers.hpp	/^void                   check_for_errors(char cons
 check_for_errors.cpp	check_for_errors.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:55	epoch:1711022005
 check_for_errors_worker	check_for_errors.cpp	/^void check_for_errors_worker(char const *str, t_s_worker_id worker_id)$/;"	kind:function	line:45	language:C++	typeref:typename:void	signature:(char const * str,t_s_worker_id worker_id)	roles:def	end:53
 check_for_errors_worker	helpers.hpp	/^void                   check_for_errors_worker(char const *str, t_s_worker_id);$/;"	kind:prototype	line:35	language:C++	typeref:typename:void	signature:(char const * str,t_s_worker_id)	roles:def	end:35
-connection_accepted	connection_accepted.cpp	/^void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)$/;"	kind:function	line:35	language:C++	typeref:typename:void	signature:(void * data,int32_t res,t_s_worker_id worker_id)	roles:def	end:70
+connection_accepted	connection_accepted.cpp	/^void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)$/;"	kind:function	line:36	language:C++	typeref:typename:void	signature:(void * data,int32_t res,t_s_worker_id worker_id)	roles:def	end:78
 connection_accepted	connection_accepted.hpp	/^void                   connection_accepted(void *data, int32_t res, t_s_worker_id worker_id);$/;"	kind:prototype	line:41	language:C++	typeref:typename:void	signature:(void * data,int32_t res,t_s_worker_id worker_id)	roles:def	end:41
-connection_accepted.cpp	connection_accepted.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:72	epoch:1711179591
+connection_accepted.cpp	connection_accepted.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:80	epoch:1711183661
 connection_accepted.hpp	connection_accepted.cpp	/^#include "connection_accepted.hpp"/;"	kind:header	line:13	language:C++	roles:local	extras:reference
-connection_accepted.hpp	connection_accepted.hpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:43	epoch:1711110301
+connection_accepted.hpp	connection_accepted.hpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:43	epoch:1711180063
 connection_accepted.hpp	start_server.cpp	/^#include "connection_accepted.hpp"/;"	kind:header	line:24	language:C++	roles:local	extras:reference
-connection_accepted_data	connection_accepted.cpp	/^	t_s_connection_accepted_data connection_accepted_data = *reinterpret_cast<t_s_connection_accept/;"	kind:local	line:37	language:C++	scope:function:connection_accepted	typeref:typename:t_s_connection_accepted_data	file:	roles:def	extras:fileScope
+connection_accepted_data	connection_accepted.cpp	/^	t_s_connection_accepted_data connection_accepted_data = *reinterpret_cast<t_s_connection_accept/;"	kind:local	line:38	language:C++	scope:function:connection_accepted	typeref:typename:t_s_connection_accepted_data	file:	roles:def	extras:fileScope
 connection_accepted_data	start_server.cpp	/^	static t_s_connection_accepted_data connection_accepted_data = {.server_config_list = server_co/;"	kind:local	line:45	language:C++	scope:function:issue_accept_if_needed	typeref:typename:t_s_connection_accepted_data	file:	roles:def	extras:fileScope	end:45	properties:static
-connection_addres	connection_accepted.hpp	/^		in6_addr               connection_addres;$/;"	kind:member	line:38	language:C++	scope:struct:s_connection_accepted_data	typeref:typename:in6_addr	access:public	roles:def	end:38
+connection_addres	connection_accepted.hpp	/^		sockaddr_in6           connection_addres;$/;"	kind:member	line:38	language:C++	scope:struct:s_connection_accepted_data	typeref:typename:sockaddr_in6	access:public	roles:def	end:38
 cqe	start_server.cpp	/^	struct io_uring_cqe *cqe;$/;"	kind:local	line:72	language:C++	scope:function:check_for_completions_and_make_callbacks	typeref:struct:io_uring_cqe *	file:	roles:def	extras:fileScope	end:72
 cstddef	main.cpp	/^#include <cstddef>/;"	kind:header	line:14	language:C++	roles:system	extras:reference
 cstddef	start_server.hpp	/^#include <cstddef>/;"	kind:header	line:15	language:C++	roles:system	extras:reference
@@ -50,12 +50,13 @@ cstdint	start_server.hpp	/^#include <cstdint>/;"	kind:header	line:16	language:C+
 cstdio	connection_accepted.cpp	/^#include <cstdio>/;"	kind:header	line:15	language:C++	roles:system	extras:reference
 cstdlib	start_server.cpp	/^#include <cstdlib>/;"	kind:header	line:15	language:C++	roles:system	extras:reference
 ctr_path	start_server.hpp	/^		char           *ctr_path;$/;"	kind:member	line:69	language:C++	scope:struct:s_server_cofig	typeref:typename:char *	access:public	roles:def	end:69
-data	connection_accepted.cpp	/^void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)$/;"	kind:parameter	line:35	language:C++	scope:function:connection_accepted	typeref:typename:void *	file:	roles:def	extras:fileScope	nth:0
+data	connection_accepted.cpp	/^void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)$/;"	kind:parameter	line:36	language:C++	scope:function:connection_accepted	typeref:typename:void *	file:	roles:def	extras:fileScope	nth:0
 data	connection_accepted.hpp	/^void                   connection_accepted(void *data, int32_t res, t_s_worker_id worker_id);$/;"	kind:parameter	line:41	language:C++	scope:prototype:connection_accepted	typeref:typename:void *	file:	roles:def	extras:fileScope	nth:0
 e_optype	start_server.hpp	/^typedef enum class e_optype$/;"	kind:enum	line:35	language:C++	roles:def	end:42	properties:scopedenum
 enter_loop	start_server.cpp	/^static void enter_loop(t_s_worker_id worker_id, t_s_server_config_list server_config_list, struc/;"	kind:function	line:92	language:C++	typeref:typename:void	file:	signature:(t_s_worker_id worker_id,t_s_server_config_list server_config_list,struct io_uring * ring,int listening_fd)	roles:def	extras:fileScope	end:100	properties:static
 enter_loop	start_server.cpp	/^static void enter_loop(t_s_worker_id worker_id, t_s_server_config_list server_config_list, struc/;"	kind:prototype	line:89	language:C++	typeref:typename:void	file:	signature:(t_s_worker_id worker_id,t_s_server_config_list server_config_list,struct io_uring * ring,int listening_fd)	roles:def	extras:fileScope	end:90	properties:static
 errno.h	check_for_errors.cpp	/^#include <errno.h>/;"	kind:header	line:13	language:C++	roles:system	extras:reference
+errno.h	connection_accepted.cpp	/^#include <errno.h>/;"	kind:header	line:16	language:C++	roles:system	extras:reference
 errno.h	main.cpp	/^#include <errno.h>/;"	kind:header	line:16	language:C++	roles:system	extras:reference
 false_val	main.cpp	/^	int           false_val = 0;$/;"	kind:local	line:68	language:C++	scope:function:lauch_workers_for_port	typeref:typename:int	file:	roles:def	extras:fileScope	end:68
 fd_index	start_server.hpp	/^		unsigned int fd_index;$/;"	kind:member	line:53	language:C++	scope:struct:s_identifyer	typeref:typename:unsigned int	access:public	roles:def	end:53
@@ -83,7 +84,7 @@ internal_callback	start_server.hpp	/^				void (*internal_callback)(void *, int32
 internal_index	get_free_connection_socket_index.cpp	/^void free_connection_socket_index(unsigned int internal_index)$/;"	kind:parameter	line:44	language:C++	scope:function:free_connection_socket_index	typeref:typename:unsigned int	file:	roles:def	extras:fileScope	nth:0
 internal_index	start_server.cpp	/^	unsigned int const                  internal_index = get_next_connection_socket_index();$/;"	kind:local	line:49	language:C++	scope:function:issue_accept_if_needed	typeref:typename:unsigned int const	file:	roles:def	extras:fileScope	end:49
 internal_index	start_server.hpp	/^void                   free_connection_socket_index(unsigned int internal_index);$/;"	kind:parameter	line:83	language:C++	scope:prototype:free_connection_socket_index	typeref:typename:unsigned int	file:	roles:def	extras:fileScope	nth:0
-ipv4	connection_accepted.cpp	/^	in_addr                      ipv4;$/;"	kind:local	line:38	language:C++	scope:function:connection_accepted	typeref:typename:in_addr	file:	roles:def	extras:fileScope	end:38
+ipv4	connection_accepted.cpp	/^	in_addr                      ipv4;$/;"	kind:local	line:39	language:C++	scope:function:connection_accepted	typeref:typename:in_addr	file:	roles:def	extras:fileScope	end:39
 ipv4	main.cpp	/^static struct in_addr get_in_addr(char const *ipv4)$/;"	kind:parameter	line:42	language:C++	scope:function:get_in_addr	typeref:typename:char const *	file:	roles:def	extras:fileScope	nth:0
 ipv4	start_server.hpp	/^		struct in_addr  ipv4;$/;"	kind:member	line:68	language:C++	scope:struct:s_server_cofig	typeref:struct:in_addr	access:public	roles:def	end:68
 ipv6	main.cpp	/^static struct in6_addr get_in6_addr(char const *ipv6)$/;"	kind:parameter	line:52	language:C++	scope:function:get_in6_addr	typeref:typename:char const *	file:	roles:def	extras:fileScope	nth:0
@@ -105,7 +106,7 @@ main	main.cpp	/^int main(void)$/;"	kind:function	line:94	language:C++	typeref:ty
 main.cpp	main.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:117	epoch:1711112663
 move_port_80_to_servers_port	start_server.hpp	/^		bool            move_port_80_to_servers_port;$/;"	kind:member	line:72	language:C++	scope:struct:s_server_cofig	typeref:typename:bool	access:public	roles:def	end:72
 move_www_host_name	start_server.hpp	/^		bool            move_www_host_name;$/;"	kind:member	line:71	language:C++	scope:struct:s_server_cofig	typeref:typename:bool	access:public	roles:def	end:71
-netinet/in.h	connection_accepted.cpp	/^#include <netinet\/in.h>/;"	kind:header	line:16	language:C++	roles:system	extras:reference
+netinet/in.h	connection_accepted.cpp	/^#include <netinet\/in.h>/;"	kind:header	line:17	language:C++	roles:system	extras:reference
 netinet/in.h	connection_accepted.hpp	/^#include <netinet\/in.h>/;"	kind:header	line:17	language:C++	roles:system	extras:reference
 netinet/in.h	main.cpp	/^#include <netinet\/in.h>/;"	kind:header	line:18	language:C++	roles:system	extras:reference
 netinet/in.h	start_server.cpp	/^#include <netinet\/in.h>/;"	kind:header	line:19	language:C++	roles:system	extras:reference
@@ -114,7 +115,7 @@ operation	start_server.hpp	/^		t_e_optype   operation;$/;"	kind:member	line:52	l
 operation_accept	start_server.hpp	/^	operation_accept,$/;"	kind:enumerator	line:38	language:C++	scope:enum:e_optype	access:public	roles:def
 port	main.cpp	/^static void lauch_workers_for_port(uint16_t port, unsigned int worker_number, t_s_server_config /;"	kind:parameter	line:62	language:C++	scope:function:lauch_workers_for_port	typeref:typename:uint16_t	file:	roles:def	extras:fileScope	nth:0
 port	start_server.hpp	/^		uint16_t     port;$/;"	kind:member	line:47	language:C++	scope:struct:s_worker_id	typeref:typename:uint16_t	access:public	roles:def	end:47
-res	connection_accepted.cpp	/^void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)$/;"	kind:parameter	line:35	language:C++	scope:function:connection_accepted	typeref:typename:int32_t	file:	roles:def	extras:fileScope	nth:1
+res	connection_accepted.cpp	/^void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)$/;"	kind:parameter	line:36	language:C++	scope:function:connection_accepted	typeref:typename:int32_t	file:	roles:def	extras:fileScope	nth:1
 res	connection_accepted.hpp	/^void                   connection_accepted(void *data, int32_t res, t_s_worker_id worker_id);$/;"	kind:parameter	line:41	language:C++	scope:prototype:connection_accepted	typeref:typename:int32_t	file:	roles:def	extras:fileScope	nth:1
 ret	get_free_connection_socket_index.cpp	/^	unsigned int ret = tracking_table[available];$/;"	kind:local	line:52	language:C++	scope:function:get_next_connection_socket_index	typeref:typename:unsigned int	file:	roles:def	extras:fileScope	end:52
 ring	start_server.cpp	/^	struct io_uring ring;$/;"	kind:local	line:104	language:C++	scope:function:start_server	typeref:struct:io_uring	file:	roles:def	extras:fileScope	end:104
@@ -123,7 +124,7 @@ ring	start_server.cpp	/^static void enter_loop(t_s_worker_id worker_id, t_s_serv
 ring	start_server.cpp	/^static void enter_loop(t_s_worker_id worker_id, t_s_server_config_list server_config_list, struc/;"	kind:parameter	line:92	language:C++	scope:function:enter_loop	typeref:struct:io_uring *	file:	roles:def	extras:fileScope	nth:2
 ring	start_server.cpp	/^static void issue_accept_if_needed(struct io_uring *ring, int listening_fd, t_s_worker_id worker/;"	kind:parameter	line:40	language:C++	scope:function:issue_accept_if_needed	typeref:struct:io_uring *	file:	roles:def	extras:fileScope	nth:0
 s_connection_accepted_data	connection_accepted.hpp	/^typedef struct s_connection_accepted_data$/;"	kind:struct	line:35	language:C++	roles:def	end:39
-s_connection_accepted_data::connection_addres	connection_accepted.hpp	/^		in6_addr               connection_addres;$/;"	kind:member	line:38	language:C++	scope:struct:s_connection_accepted_data	typeref:typename:in6_addr	access:public	roles:def	extras:qualified
+s_connection_accepted_data::connection_addres	connection_accepted.hpp	/^		sockaddr_in6           connection_addres;$/;"	kind:member	line:38	language:C++	scope:struct:s_connection_accepted_data	typeref:typename:sockaddr_in6	access:public	roles:def	extras:qualified
 s_connection_accepted_data::server_config_list	connection_accepted.hpp	/^		t_s_server_config_list server_config_list;$/;"	kind:member	line:37	language:C++	scope:struct:s_connection_accepted_data	typeref:typename:t_s_server_config_list	access:public	roles:def	extras:qualified
 s_identifyer	start_server.hpp	/^typedef struct s_identifyer$/;"	kind:struct	line:50	language:C++	roles:def	end:62
 s_identifyer::__anon17a26b1f010a	start_server.hpp	/^		{$/;"	kind:union	line:56	language:C++	scope:struct:s_identifyer	access:public	roles:def	extras:qualified,anonymous
@@ -163,7 +164,7 @@ socket_write	start_server.hpp	/^	socket_write,$/;"	kind:enumerator	line:40	langu
 sqe	start_server.cpp	/^	struct io_uring_sqe                *sqe;$/;"	kind:local	line:43	language:C++	scope:function:issue_accept_if_needed	typeref:struct:io_uring_sqe *	file:	roles:def	extras:fileScope	end:43
 start_server	start_server.cpp	/^void start_server(t_s_worker_id worker_id, t_s_server_config_list server_config_list, int listen/;"	kind:function	line:102	language:C++	typeref:typename:void	signature:(t_s_worker_id worker_id,t_s_server_config_list server_config_list,int listening_fd)	roles:def	end:119
 start_server	start_server.hpp	/^void start_server(t_s_worker_id worker_id, t_s_server_config_list server_config_list, int listen/;"	kind:prototype	line:81	language:C++	typeref:typename:void	signature:(t_s_worker_id worker_id,t_s_server_config_list server_config_list,int listening_fd)	roles:def	end:82
-start_server.cpp	start_server.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:121	epoch:1711112650
+start_server.cpp	start_server.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:121	epoch:1711180930
 start_server.hpp	check_for_errors.cpp	/^#include "start_server.hpp"/;"	kind:header	line:18	language:C++	roles:local	extras:reference
 start_server.hpp	connection_accepted.hpp	/^#include "start_server.hpp"/;"	kind:header	line:15	language:C++	roles:local	extras:reference
 start_server.hpp	get_free_connection_socket_index.cpp	/^#include "start_server.hpp"/;"	kind:header	line:13	language:C++	roles:local	extras:reference
@@ -180,10 +181,10 @@ stdlib.h	main.cpp	/^#include <stdlib.h>/;"	kind:header	line:22	language:C++	role
 stdlib.h	start_server.cpp	/^#include <stdlib.h>/;"	kind:header	line:21	language:C++	roles:system	extras:reference
 str	check_for_errors.cpp	/^void check_for_errors(char const *str)$/;"	kind:parameter	line:36	language:C++	scope:function:check_for_errors	typeref:typename:char const *	file:	roles:def	extras:fileScope	nth:0
 str	check_for_errors.cpp	/^void check_for_errors_worker(char const *str, t_s_worker_id worker_id)$/;"	kind:parameter	line:45	language:C++	scope:function:check_for_errors_worker	typeref:typename:char const *	file:	roles:def	extras:fileScope	nth:0
-str	connection_accepted.cpp	/^	char                         str[8 * 4 + 7 + 1];$/;"	kind:local	line:39	language:C++	scope:function:connection_accepted	typeref:typename:char[]	file:	roles:def	extras:fileScope	end:39
+str	connection_accepted.cpp	/^	char                         str[8 * 4 + 7 + 1];$/;"	kind:local	line:40	language:C++	scope:function:connection_accepted	typeref:typename:char[]	file:	roles:def	extras:fileScope	end:40
 str	helpers.hpp	/^void                   check_for_errors(char const *str);$/;"	kind:parameter	line:34	language:C++	scope:prototype:check_for_errors	typeref:typename:char const *	file:	roles:def	extras:fileScope	nth:0
 str	helpers.hpp	/^void                   check_for_errors_worker(char const *str, t_s_worker_id);$/;"	kind:parameter	line:35	language:C++	scope:prototype:check_for_errors_worker	typeref:typename:char const *	file:	roles:def	extras:fileScope	nth:0
-sys/socket.h	connection_accepted.cpp	/^#include <sys\/socket.h>/;"	kind:header	line:17	language:C++	roles:system	extras:reference
+sys/socket.h	connection_accepted.cpp	/^#include <sys\/socket.h>/;"	kind:header	line:18	language:C++	roles:system	extras:reference
 sys/socket.h	main.cpp	/^#include <sys\/socket.h>/;"	kind:header	line:23	language:C++	roles:system	extras:reference
 sys/socket.h	start_server.cpp	/^#include <sys\/socket.h>/;"	kind:header	line:22	language:C++	roles:system	extras:reference
 t_e_optype	start_server.hpp	/^} t_e_optype;$/;"	kind:typedef	line:42	language:C++	typeref:enum:e_optype	roles:def
@@ -198,7 +199,7 @@ unistd.h	main.cpp	/^#include <unistd.h>/;"	kind:header	line:24	language:C++	role
 usser_issued_operation	start_server.hpp	/^	usser_issued_operation,$/;"	kind:enumerator	line:37	language:C++	scope:enum:e_optype	access:public	roles:def
 vector	start_server.cpp	/^	struct iovec    vector;$/;"	kind:local	line:105	language:C++	scope:function:start_server	typeref:struct:iovec	file:	roles:def	extras:fileScope	end:105
 worker_id	check_for_errors.cpp	/^void check_for_errors_worker(char const *str, t_s_worker_id worker_id)$/;"	kind:parameter	line:45	language:C++	scope:function:check_for_errors_worker	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope	nth:1
-worker_id	connection_accepted.cpp	/^void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)$/;"	kind:parameter	line:35	language:C++	scope:function:connection_accepted	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope	nth:2
+worker_id	connection_accepted.cpp	/^void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)$/;"	kind:parameter	line:36	language:C++	scope:function:connection_accepted	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope	nth:2
 worker_id	connection_accepted.hpp	/^void                   connection_accepted(void *data, int32_t res, t_s_worker_id worker_id);$/;"	kind:parameter	line:41	language:C++	scope:prototype:connection_accepted	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope	nth:2
 worker_id	main.cpp	/^	t_s_worker_id worker_id = {.port = port};$/;"	kind:local	line:69	language:C++	scope:function:lauch_workers_for_port	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope	end:69
 worker_id	start_server.cpp	/^static void check_for_completions_and_make_callbacks(struct io_uring *ring, t_s_worker_id worker/;"	kind:parameter	line:70	language:C++	scope:function:check_for_completions_and_make_callbacks	typeref:typename:t_s_worker_id	file:	roles:def	extras:fileScope	nth:1

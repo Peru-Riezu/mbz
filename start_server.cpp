@@ -6,7 +6,7 @@
 /*   github:   https://github.com/priezu-m                                    */
 /*   Licence:  GPLv3                                                          */
 /*   Created:  2024/03/21 10:55:24                                            */
-/*   Updated:  2024/03/22 14:03:19                                            */
+/*   Updated:  2024/03/23 09:02:10                                            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void issue_accept_if_needed(struct io_uring *ring, int listening_fd, t_s_
 								   t_s_server_config_list server_config_list)
 {
 	struct io_uring_sqe                *sqe;
-	socklen_t                           addr_size;
+	static socklen_t                    addr_size = sizeof(sockaddr_in6);
 	static t_s_connection_accepted_data connection_accepted_data = {.server_config_list = server_config_list};
 	static t_s_identifyer               identifyer = {.operation = e_optype::operation_accept,
 													  .internal_callback = connection_accepted,
