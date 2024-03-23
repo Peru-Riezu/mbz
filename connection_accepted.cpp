@@ -6,7 +6,7 @@
 /*   github:   https://github.com/priezu-m                                    */
 /*   Licence:  GPLv3                                                          */
 /*   Created:  2024/03/22 12:45:42                                            */
-/*   Updated:  2024/03/22 13:57:14                                            */
+/*   Updated:  2024/03/23 08:39:48                                            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,11 @@ void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)
 								static_cast<unsigned>(connection_accepted_data.connection_addres.s6_addr[1] << 1U) |
 								connection_accepted_data.connection_addres.s6_addr[1]);
 
-			inet_ntop(AF_INET, &ipv4, str, sizeof(ipv4));
+			inet_ntop(AF_INET, &ipv4, str, sizeof(str));
 		}
 		else
 		{
-			inet_ntop(AF_INET6, &connection_accepted_data.connection_addres, str,
-					  sizeof(connection_accepted_data.connection_addres));
+			inet_ntop(AF_INET6, &connection_accepted_data.connection_addres, str, sizeof(str));
 		}
 		fprintf(stderr, "connection accepted from ip: %s\n", str);
 	}

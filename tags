@@ -30,9 +30,9 @@ check_for_errors	helpers.hpp	/^void                   check_for_errors(char cons
 check_for_errors.cpp	check_for_errors.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:55	epoch:1711022005
 check_for_errors_worker	check_for_errors.cpp	/^void check_for_errors_worker(char const *str, t_s_worker_id worker_id)$/;"	kind:function	line:45	language:C++	typeref:typename:void	signature:(char const * str,t_s_worker_id worker_id)	roles:def	end:53
 check_for_errors_worker	helpers.hpp	/^void                   check_for_errors_worker(char const *str, t_s_worker_id);$/;"	kind:prototype	line:35	language:C++	typeref:typename:void	signature:(char const * str,t_s_worker_id)	roles:def	end:35
-connection_accepted	connection_accepted.cpp	/^void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)$/;"	kind:function	line:35	language:C++	typeref:typename:void	signature:(void * data,int32_t res,t_s_worker_id worker_id)	roles:def	end:71
+connection_accepted	connection_accepted.cpp	/^void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)$/;"	kind:function	line:35	language:C++	typeref:typename:void	signature:(void * data,int32_t res,t_s_worker_id worker_id)	roles:def	end:70
 connection_accepted	connection_accepted.hpp	/^void                   connection_accepted(void *data, int32_t res, t_s_worker_id worker_id);$/;"	kind:prototype	line:41	language:C++	typeref:typename:void	signature:(void * data,int32_t res,t_s_worker_id worker_id)	roles:def	end:41
-connection_accepted.cpp	connection_accepted.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:73	epoch:1711112234
+connection_accepted.cpp	connection_accepted.cpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:72	epoch:1711179591
 connection_accepted.hpp	connection_accepted.cpp	/^#include "connection_accepted.hpp"/;"	kind:header	line:13	language:C++	roles:local	extras:reference
 connection_accepted.hpp	connection_accepted.hpp	1;"	kind:file	line:1	language:C++	roles:def	extras:inputFile	end:43	epoch:1711110301
 connection_accepted.hpp	start_server.cpp	/^#include "connection_accepted.hpp"/;"	kind:header	line:24	language:C++	roles:local	extras:reference
