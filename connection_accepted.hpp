@@ -6,13 +6,14 @@
 /*   github:   https://github.com/priezu-m                                    */
 /*   Licence:  GPLv3                                                          */
 /*   Created:  2024/03/22 13:19:44                                            */
-/*   Updated:  2024/03/23 08:47:43                                            */
+/*   Updated:  2024/03/27 11:41:08                                            */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "start_server.hpp"
+#include "tls.hpp"
 #include <cstdint>
 #include <netinet/in.h>
 
@@ -32,12 +33,28 @@
 #pragma GCC diagnostic ignored "-Wc++98-compat-extra-semi"
 ;
 
+typedef struct s_connection_data
+{
+		sockaddr_in6        connection_addres;
+
+		Botan::TLS::Server *tsl_engien;
+		uint8_t            *buffer;
+		size_t              buffer_size;
+		unsigned int        socket_fd;
+		struct io_uring    *ring;
+} t_s_connection_data;
+
 typedef struct s_connection_accepted_data
 {
 		t_s_server_config_list server_config_list;
 		sockaddr_in6           connection_addres;
+		uint8_t               *buffer;
+		size_t                 buffer_size;
+		struct io_uring       *ring;
+		unsigned int           socket_fd;
+		t_s_worker_id          worker_id;
 } t_s_connection_accepted_data;
 
-void                   connection_accepted(void *data, int32_t res, t_s_worker_id worker_id);
+void                   connection_accepted(void *data, int32_t res);
 
 #pragma GCC diagnostic pop

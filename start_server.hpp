@@ -6,7 +6,7 @@
 /*   github:   https://github.com/priezu-m                                    */
 /*   Licence:  GPLv3                                                          */
 /*   Created:  2024/03/21 10:54:41                                            */
-/*   Updated:  2024/03/23 07:14:06                                            */
+/*   Updated:  2024/03/27 12:18:18                                            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,7 @@
 #define FD_TABLE_SIZE          50000
 #define REGISTERED_BUFFER_SIZE 100000000
 
-typedef enum class e_optype
-{
-	usser_issued_operation,
-	operation_accept,
-	socket_read,
-	socket_write,
-	timeout
-} t_e_optype;
+extern uint8_t g_buffer[REGISTERED_BUFFER_SIZE];
 
 typedef struct s_worker_id
 {
@@ -49,15 +42,9 @@ typedef struct s_worker_id
 
 typedef struct s_identifyer
 {
-		t_e_optype   operation;
 		unsigned int fd_index;
 
-		union
-		{
-				void (*internal_callback)(void *, int32_t, t_s_worker_id); // do not give this deffinition to the user
-				void (*callback)(void *, int32_t);
-		};
-
+		void (*callback)(void *, int32_t);
 		void *callback_params;
 } t_s_identifyer;
 

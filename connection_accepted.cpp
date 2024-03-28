@@ -6,11 +6,12 @@
 /*   github:   https://github.com/priezu-m                                    */
 /*   Licence:  GPLv3                                                          */
 /*   Created:  2024/03/22 12:45:42                                            */
-/*   Updated:  2024/03/23 09:47:41                                            */
+/*   Updated:  2024/03/27 11:47:43                                            */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "connection_accepted.hpp"
+#include "tls.hpp"
 #include <arpa/inet.h>
 #include <cstdio>
 #include <errno.h>
@@ -33,13 +34,14 @@
 #pragma GCC diagnostic ignored "-Wc++98-compat-extra-semi"
 ;
 
-void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)
+void connection_accepted(void *data, int32_t res)
 {
 	t_s_connection_accepted_data connection_accepted_data = *reinterpret_cast<t_s_connection_accepted_data *>(data);
 	in_addr                      ipv4;
 	char                         str[8 * 4 + 7 + 1];
 
-	fprintf(stderr, "worker nº%u of port %hu: ", worker_id.worker_num, worker_id.port);
+	fprintf(stderr, "worker nº%u of port %hu: ", connection_accepted_data.worker_id.worker_num,
+			connection_accepted_data.worker_id.port);
 	if (res == 0)
 	{
 		if ((connection_accepted_data.connection_addres.sin6_addr.s6_addr[0] == 0) &&
@@ -68,6 +70,9 @@ void connection_accepted(void *data, int32_t res, t_s_worker_id worker_id)
 			inet_ntop(AF_INET6, &connection_accepted_data.connection_addres.sin6_addr, str, sizeof(str));
 		}
 		fprintf(stderr, "connection accepted from ip: %s\n", str);
+		// pool socket for read, set callback to a function that will read from it, set up the tls engien pass it the
+		// data, and then issue another pool fo read whit a callback to a function that uses the already set up engen
+		// and passes the data to the engien
 	}
 	else
 	{
